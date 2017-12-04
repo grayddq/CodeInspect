@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import os, logging
 
+NAME, VERSION, AUTHOR, LICENSE = "CodeInspect", "V0.1", "咚咚呛", "Public (FREE)"
+
 # 代码路径
 CODE_DIR_LIST = ['/root/tool/PubilcAssetInfo', '/home/seclogin/test_gdd/testbbb', '/home/seclogin/test_gdd/testrsync']
 # 代码同步方式 git / svn / rsync
@@ -10,7 +12,7 @@ ACTION = True
 # 可疑文件存放的地方
 TMP = '/tmp/codeinspect/'
 # rsync服务的登录,替换其中的IP、账户、密码文件
-RSYNC_LOGIN_INFO = 'rsync --password-file=/home/seclogin/test_gdd/pass.txt test@182.61.51.244::web'
+RSYNC_LOGIN_INFO = 'rsync --password-file=/etc/pass.txt test@192.168.1.5::web'
 
 
 def loging():
