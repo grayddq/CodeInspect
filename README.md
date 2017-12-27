@@ -11,13 +11,17 @@
 
 满足如下安全需求
 
-	1、周期内查询网站代码是否进行过修改如：添加、修改
+	1、周期内查询网站代码是否进行过修改如：添加、修改、删除等
 	2、修改的文件进行日志告警、并进行提取备份
-	3、事件发生时，立即进行代码同步恢复，删掉添加和修改的内容。
+	3、事件发生时，可立即进行代码同步恢复，删掉添加或修改的内容。
+	4、支持GIT、SVN、Rsync等代码发布服务
 
 技术细节如下：
 
-	1、支持GIT、SVN、Rsync等代码发布服务
+	1、支持多级代码目录形式
+	2、支持GIT、SVN、Rsync等代码发布服务
+	3、支持变动文件拷贝
+	4、支持代码恢复功能
 
 
 ## Test Environment ##
@@ -32,7 +36,7 @@
 
 ## Config ##
 
-配置信息：./conf/info.conf
+配置信息CodeInspect.py
 
 	# 代码路径
 	CODE_DIR_LIST = ['/root/tool/PubilcAssetInfo', '/home/seclogin/test_gdd/testbbb', '/home/seclogin/test_gdd/testrsync']
@@ -42,7 +46,7 @@
 	ACTION = True
 	# 可疑文件存放的地方
 	TMP = '/tmp/codeinspect/'
-	# rsync服务的登录,替换其中的IP、账户、密码文件
+	# rsync服务的登录,替换其中的IP、账户、密码文件等信息
 	RSYNC_LOGIN_INFO = 'rsync --password-file=/etc/pass.txt test@192.168.1.5::web'
 
 ## Log ##
